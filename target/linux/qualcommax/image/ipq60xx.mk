@@ -61,20 +61,22 @@ define Device/glinet_gl-axt1800
 endef
 TARGET_DEVICES += glinet_gl-axt1800
 
-define Device/jdcloud_re-cs-02
+define Device/jdcloud_ax6600
 	$(call Device/FitImage)
 	$(call Device/EmmcImage)
 	DEVICE_VENDOR := JDCloud
-	DEVICE_MODEL := AX6600
+	DEVICE_MODEL := Athena AX6600
 	SOC := ipq6010
 	BLOCKSIZE := 64k
 	KERNEL_SIZE := 6144k
 	DEVICE_DTS_CONFIG := config@cp03-c3
+	DEVICE_DTS := ipq6010-re-cs-02
 	DEVICE_PACKAGES := ipq-wifi-jdcloud_ax6600 kmod-ath11k-pci ath11k-firmware-qcn9074
+	SUPPORTED_DEVICES += jdcloud,re-cs-02
 endef
-TARGET_DEVICES += jdcloud_re-cs-02
+TARGET_DEVICES += jdcloud_ax6600
 
-define Device/jdcloud_re-ss-01
+define Device/jdcloud_ax1800-pro
 	$(call Device/FitImage)
 	$(call Device/EmmcImage)
 	DEVICE_VENDOR := JDCloud
@@ -83,9 +85,11 @@ define Device/jdcloud_re-ss-01
 	BLOCKSIZE := 64k
 	KERNEL_SIZE := 6144k
 	DEVICE_DTS_CONFIG := config@cp03-c2
+	DEVICE_DTS := ipq6000-re-ss-01
 	DEVICE_PACKAGES := ipq-wifi-jdcloud_ax1800pro
+	SUPPORTED_DEVICES += jdcloud,re-ss-01
 endef
-TARGET_DEVICES += jdcloud_re-ss-01
+TARGET_DEVICES += jdcloud_ax1800-pro
 
 define Device/linksys_mr7350
 	$(call Device/FitImage)
